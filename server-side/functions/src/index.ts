@@ -1,4 +1,7 @@
-import * as functions from 'firebase-functions';
+// import * as functions from 'firebase-functions';
+import { test } from './services';
+
+export const writeFS = test;
 
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
