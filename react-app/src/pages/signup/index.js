@@ -24,6 +24,7 @@ export default class SignUp extends Component {
 						<Button variant="contained" className="login-button">
 							Register
 						</Button>
+
 						<h6 className="bottom-text">
 							Oh, you have an account?{' '}
 							<Link to="/login">

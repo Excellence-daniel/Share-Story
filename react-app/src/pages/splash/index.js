@@ -31,11 +31,13 @@ export class SplashScreen extends Component {
 					</center>
 
 					{showButton && (
-						<Link to="/login">
-							<Button color="primary" className="start-button" variant="contained">
-								Start
-							</Button>
-						</Link>
+						<center>
+							<Link to="/login">
+								<Button color="primary" className="start-button" variant="contained">
+									Start
+								</Button>
+							</Link>
+						</center>
 					)}
 				</div>
 			</div>
