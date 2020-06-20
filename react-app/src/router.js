@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { SplashScreen } from './pages/splash/index';
 import Media from 'react-media';
 import { BREAKPOINT_SMALL } from './assets/partials/css-constants';
 import NotForDesktop from './components/not-desktop';
+import Login from './pages/login';
 
 function AppRouter() {
 	return (
@@ -14,7 +15,10 @@ function AppRouter() {
 const Routes = () => {
 	return (
 		<Router>
-			<Route exact path="/" component={SplashScreen} />
+			<Switch>
+				<Route exact path="/" component={SplashScreen} />
+				<Route exact path="/login" component={Login} />
+			</Switch>
 		</Router>
 	);
 };

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.scss';
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/global-images/logo-full.png';
 import { Button } from '@material-ui/core';
 
@@ -30,9 +31,11 @@ export class SplashScreen extends Component {
 					</center>
 
 					{showButton && (
-						<Button color="primary" className="start-button" variant="contained">
-							Start
-						</Button>
+						<Link to="/login">
+							<Button color="primary" className="start-button" variant="contained">
+								Start
+							</Button>
+						</Link>
 					)}
 				</div>
 			</div>
