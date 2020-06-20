@@ -5,6 +5,7 @@ import Media from 'react-media';
 import { BREAKPOINT_SMALL } from './assets/partials/css-constants';
 import NotForDesktop from './components/not-desktop';
 import Login from './pages/login';
+import SignUp from './pages/signup';
 
 function AppRouter() {
 	return (
@@ -18,6 +19,7 @@ const Routes = () => {
 			<Switch>
 				<Route exact path="/" component={SplashScreen} />
 				<Route exact path="/login" component={Login} />
+				<Route exact path="/register" component={SignUp} />
 			</Switch>
 		</Router>
 	);

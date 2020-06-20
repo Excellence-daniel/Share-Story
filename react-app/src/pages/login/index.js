@@ -42,7 +42,7 @@ class Login extends Component {
 						</Button>
 						<h6 className="bottom-text">
 							You don't have an account?{' '}
-							<Link>
+							<Link to="/register">
 								<span>Sign Up!</span>
 							</Link>
 						</h6>
