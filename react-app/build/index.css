@@ -1,0 +1,11 @@
+:root {
+      --primary: #0f4c75;
+}
+
+:root {
+      font-family: "Noto Sans TC", sans-serif !important;
+}
+
+label {
+      font-family: "Noto Sans TC", sans-serif !important;
+}
