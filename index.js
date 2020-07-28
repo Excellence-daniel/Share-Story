@@ -16,6 +16,9 @@ app.listen(port, () => {
   console.log("Server Started!");
 });
 
-app.get("/login", authEndpoints.login);
+// app.get("/login", authEndpoints.login);
+app.get("/login", async () => {
+  console.log("hey login endpoijnt");
+});
 
 module.exports = app;
