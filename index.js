@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = 4030;
+const port = process.env.PORT || 4030; //we use the process port because the other port might not be available so heroku would provide us with a port that is.
 
-const authEndpoints = require("./connector/login");
+// const authEndpoints = require("./connector/login");
 
 app.use(
   express.urlencoded({
@@ -22,4 +22,7 @@ app.get("/login", async (request, response) => {
   return response.status(200).send("hey hello");
 });
 
-module.exports = app;
+app.listen(port, () => {
+  console.log("Server Started!");
+});
+// module.exports = app;
