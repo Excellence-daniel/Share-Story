@@ -1,12 +1,13 @@
 import React from 'react';
-import // BrowserRouter as Router,
-// Route,
-// Switch,
-// Redirect,
-'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HomePage } from './pages/home';
 
 const AppRoutes = () => {
-  return <></>;
+  return (
+    <Router>
+      <Route path="/" component={HomePage} />
+    </Router>
+  );
 };
 
 export default AppRoutes;

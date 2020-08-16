@@ -1,0 +1,90 @@
+.home-view {
+  .header {
+    padding: 1%;
+    .logo-image {
+      width: 7%;
+    }
+    .menu-links {
+      p {
+        float: right;
+        text-transform: uppercase;
+        color: #4f68e5;
+        font-size: 17px;
+        font-weight: 500;
+        margin-top: 1rem;
+        a {
+          text-decoration: none;
+          color: #4f68e5;
+        }
+      }
+    }
+  }
+
+  .body {
+    padding: 1%;
+    margin-top: 15rem;
+    .text-part {
+      color: #4f68e5;
+      h1 {
+        font-weight: 800;
+        font-size: 10rem;
+      }
+      h5 {
+        width: 75%;
+        line-height: 1.4;
+        font-weight: 400;
+        font-size: 18px;
+      }
+    }
+    .side-mail-img {
+      transform: rotate(-23deg);
+      width: 42rem;
+      margin-top: -12rem;
+      margin-left: 17rem;
+    }
+  }
+
+  .download-buttons {
+    margin-top: 8rem;
+    .col-3 {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    button {
+      cursor: pointer;
+      display: flex;
+      background: #4f68e5;
+      align-items: center;
+      justify-content: space-around;
+      width: 11rem;
+      height: 4rem;
+      border: none;
+      box-shadow: 4px 5px #d5d5d5;
+
+      .apple-icon {
+        width: 25px;
+      }
+
+      p {
+        margin-top: 12px;
+        text-align: center;
+        margin: 0;
+        margin-top: -3px;
+
+        .sub-text {
+          font-size: 10px;
+        }
+        .text {
+          display: block;
+          margin-top: -5px;
+        }
+      }
+
+      &.btn-android {
+        background: transparent;
+        border: 1px solid gray;
+        color: black;
+      }
+    }
+  }
+}
