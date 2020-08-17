@@ -12,10 +12,10 @@ export class HomePage extends Component {
       <div className="container-fluid home-view">
         <section className="header">
           <div className="row">
-            <div className="col-6">
+            <div className="col-md-6 col-sm-12">
               <img src={Logo} alt="logo" className="logo-image" />
             </div>
-            <div className="col-6 menu-links">
+            <div className="col-md-6 col-sm-12 menu-links">
               <p>
                 <Link to="/login">Login</Link> /{' '}
                 <Link to="/signup">SignUp</Link>
@@ -25,7 +25,7 @@ export class HomePage extends Component {
         </section>
         <section className="body">
           <div className="row">
-            <div className="col-5 text-part">
+            <div className="col-md-5 col-sm-12 text-part">
               <h1>SHARE IT.</h1>
               <h5>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -34,7 +34,7 @@ export class HomePage extends Component {
                 nunc nisl.
               </h5>
             </div>
-            <div className="col-7">
+            <div className="col-md-7 col-sm-12">
               <img src={Mail} alt="mail-img" className="side-mail-img" />
             </div>
           </div>
@@ -42,7 +42,7 @@ export class HomePage extends Component {
         <section className="download-buttons">
           <div className="row">
             <div className="col-9"></div>
-            <div className="col-3">
+            <div className="col-md-3 col-sm-12 store-buttons">
               <button type="button" className="btn btn-secondary btn-apple">
                 <img src={AppleIcon} className="apple-icon" alt="apple-icon" />
                 <p>
