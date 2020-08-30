@@ -18,7 +18,7 @@ export class HomePage extends Component {
             <div className="col-md-6 col-sm-12 menu-links">
               <p>
                 <Link to="/login">Login</Link> /{' '}
-                <Link to="/signup">SignUp</Link>
+                <Link to="/register">SignUp</Link>
               </p>
             </div>
           </div>

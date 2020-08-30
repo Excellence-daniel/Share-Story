@@ -1,0 +1,71 @@
+.register {
+  .side-bar {
+    background-color: #4f68e5;
+    height: 100vh;
+  }
+
+  .form-portion {
+    background-image: url('../../assets/images/paper-plane.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40rem;
+  }
+
+  .form-side {
+    margin-top: 10rem;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 4rem;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 5rem;
+      font-weight: 800;
+      color: #4f68e5;
+      padding: 1rem;
+
+      @media screen and (max-width: 768px) {
+        font-size: 4rem;
+      }
+    }
+
+    .form-control {
+      height: 4rem;
+    }
+
+    .forms-inputs {
+      padding: 1rem;
+    }
+
+    .signup-button {
+      background: #4f68e5;
+      font-size: 14px;
+      width: 10rem;
+      height: 4rem;
+      text-transform: uppercase;
+
+      &:active {
+        background: #4f68e5 !important;
+        border: none !important;
+        outline: none;
+        box-shadow: none;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border: none;
+      }
+    }
+    .not-logged-in {
+      font-weight: 200;
+      margin-top: 10px;
+      span {
+        font-weight: 600;
+        color: #4f68e5;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
