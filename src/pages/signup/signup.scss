@@ -2,6 +2,34 @@
   .side-bar {
     background-color: #4f68e5;
     height: 100vh;
+    text-align: center;
+    color: white;
+
+    .s-logo {
+      font-size: 12rem;
+      padding: 4rem;
+      font-weight: 800;
+    }
+
+    .app-name {
+      text-transform: uppercase;
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    .about-us {
+      padding: 5rem;
+      font-size: 16px;
+    }
+
+    .copyright {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      font-size: 17px;
+      align-content: center;
+    }
   }
 
   .form-portion {

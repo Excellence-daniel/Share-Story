@@ -43,7 +43,20 @@ export class Register extends Component {
       <section className="register">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-4 side-bar"></div>
+            <div className="col-md-4 side-bar">
+              <h1 className="s-logo">S</h1>
+              <h2 className="app-name">Share Story</h2>
+              <div className="about-us">
+                <b>SHARE STORY</b> allows you as a user to share your stories
+                amongst other users and friends. It also gives the priviledge of
+                publishing your stories.
+              </div>
+              <center>
+                <h5 className="copyright">
+                  &copy; Copyright {new Date().getFullYear()} Inc.
+                </h5>
+              </center>
+            </div>
             <div className="col-md-8 col-sm-12 form-portion">
               <div className="row">
                 <div className="col-md-2"></div>
@@ -58,7 +71,7 @@ export class Register extends Component {
                           name="firstName"
                           onChange={this.handleInput}
                         />
-                      </p>{' '}
+                      </p>
                       <p className="col-6">
                         <input
                           className="form-control"
