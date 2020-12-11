@@ -1,12 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRoutes from './router';
-// import * as serviceWorker from './serviceWorker';
+import { SnackbarProvider } from 'notistack';
+
+// add action to all snackbars
+const notistackRef = React.createRef();
+const onClickDismiss = key => () => {
+  notistackRef.current.closeSnackbar(key);
+};
 
 ReactDOM.render(
-  <React.StrictMode>
+  <SnackbarProvider
+    preventDuplicate
+    maxSnack={1}
+    ref={notistackRef}
+    anchorOrigin={{
+      vertical: 'bottom',
+      horizontal: 'left',
+    }}
+    action={key => (
+      <button
+        className="btn"
+        style={{ color: 'white' }}
+        onClick={onClickDismiss(key)}
+      >
+        Dismiss
+      </button>
+    )}
+  >
     <AppRoutes />
-  </React.StrictMode>,
+  </SnackbarProvider>,
   document.getElementById('root'),
 );
 

@@ -1,32 +1,32 @@
 import React, { Component } from 'react';
+import { withSnackbar } from 'notistack';
 import axios from 'axios';
 import './signup.scss';
+import { setUser } from '../../utils';
 
-export class Register extends Component {
+class Register extends Component {
   state = {
-    firstName: '',
-    lastName: '',
+    firstname: '',
+    lastname: '',
     email: '',
-    mobileNumber: '',
+    phonenumber: '',
     password: '',
-  };
-
-  sendEmail = async () => {
-    console.log('send email now');
-    // const url = 'http://localhost:4040/send-email';
-    // const query = await axios.post(url, { email: this.state.email });
-    // console.log({ query });
+    loading: false,
+    signUpSuccess: false,
   };
 
   handleSignUp = async () => {
     try {
-      const { firstName, lastName, email, mobileNumber, password } = this.state;
-      if (!firstName || !lastName || !email || !mobileNumber || !password) {
-        window.alert('Fill in all the boxes');
+      const { firstname, lastname, email, phonenumber, password } = this.state;
+      if (!firstname || !lastname || !email || !phonenumber || !password) {
+        this.props.enqueueSnackbar('Fill in all the boxes');
       } else {
-        console.log('all done');
-        const name = firstName + ' ' + lastName;
-        await this.sendEmail(email, name);
+        const user = await axios.post(
+          'http://localhost:4020/register',
+          this.state,
+        );
+        setUser(user);
+        this.setState({ signUpSuccess: true });
       }
     } catch (e) {
       console.log(e);
@@ -68,7 +68,7 @@ export class Register extends Component {
                         <input
                           className="form-control"
                           placeholder="First Name"
-                          name="firstName"
+                          name="firstname"
                           onChange={this.handleInput}
                         />
                       </p>
@@ -76,7 +76,7 @@ export class Register extends Component {
                         <input
                           className="form-control"
                           placeholder="Last Name"
-                          name="lastName"
+                          name="lastname"
                           onChange={this.handleInput}
                         />
                       </p>
@@ -92,7 +92,7 @@ export class Register extends Component {
                         <input
                           className="form-control"
                           placeholder="Mobile Number"
-                          name="mobileNumber"
+                          name="phonenumber"
                           onChange={this.handleInput}
                         />
                       </p>
@@ -128,3 +128,5 @@ export class Register extends Component {
     );
   }
 }
+
+export default withSnackbar(Register);
