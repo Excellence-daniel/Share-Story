@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const getServerUrl = () => {
   let url = '';
-  if (process.env.NODE_ENV) {
+  if (process.env.NODE_ENV === 'development') {
     url = process.env.REACT_APP_API_STAGING_URL;
-  } else {
+  } else if (process.env.NODE_ENV === 'production') {
     url = process.env.REACT_APP_API_PROD_URL;
   }
   return url;
