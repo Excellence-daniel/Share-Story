@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import { withSnackbar } from 'notistack';
-import axios from 'axios';
+// import axios from 'axios';
 import './signup.scss';
-import { setUser } from '../../utils';
+// import { setUser } from '../../utils';
+import { getServerUrl } from '../../utils/dataservice';
 
 class Register extends Component {
   state = {
@@ -17,17 +19,18 @@ class Register extends Component {
 
   handleSignUp = async () => {
     try {
-      const { firstname, lastname, email, phonenumber, password } = this.state;
-      if (!firstname || !lastname || !email || !phonenumber || !password) {
-        this.props.enqueueSnackbar('Fill in all the boxes');
-      } else {
-        const user = await axios.post(
-          'http://localhost:4020/register',
-          this.state,
-        );
-        setUser(user);
-        this.setState({ signUpSuccess: true });
-      }
+      getServerUrl();
+      // const { firstname, lastname, email, phonenumber, password } = this.state;
+      // if (!firstname || !lastname || !email || !phonenumber || !password) {
+      //   this.props.enqueueSnackbar('Fill in all the boxes');
+      // } else {
+      //   const user = await axios.post(
+      //     'http://localhost:4020/register',
+      //     this.state,
+      //   );
+      //   setUser(user);
+      //   this.setState({ signUpSuccess: true });
+      // }
     } catch (e) {
       console.log(e);
     }
@@ -114,7 +117,7 @@ class Register extends Component {
                         Register
                       </button>
                       <p className="not-logged-in">
-                        Have an account? <span> Log In</span>
+                        Have an account? <NavLink to="/login"> LOG IN </NavLink>
                       </p>
                     </center>
                   </div>
