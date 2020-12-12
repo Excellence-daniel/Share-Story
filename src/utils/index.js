@@ -1,4 +1,5 @@
 export const setUser = user => {
+  delete user.password;
   localStorage.setItem('user', JSON.stringify(user));
 };
 

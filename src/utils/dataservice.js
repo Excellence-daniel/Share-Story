@@ -1,8 +1,22 @@
-export const getServerUrl = () => {
-  console.log('env', process.env);
-  //for local -- developement
+import axios from 'axios';
+
+const getServerUrl = () => {
+  let url = '';
+  if (process.env.NODE_ENV) {
+    url = process.env.REACT_APP_API_STAGING_URL;
+  } else {
+    url = process.env.REACT_APP_API_PROD_URL;
+  }
+  return url;
 };
 
-// const postData = () => {
-//   const url = '';
-// };
+export const postData = async (route, body) => {
+  try {
+    const serverUrl = getServerUrl();
+    const url = `${serverUrl}${route}`;
+    const result = await axios.post(url, body);
+    return result.data;
+  } catch (e) {
+    throw e.response;
+  }
+};

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { withSnackbar } from 'notistack';
-// import axios from 'axios';
 import './signup.scss';
-// import { setUser } from '../../utils';
-import { getServerUrl } from '../../utils/dataservice';
+import { setUser } from '../../utils';
+import { postData } from '../../utils/dataservice';
+import Loading from '../../components/loading';
 
 class Register extends Component {
   state = {
@@ -19,20 +19,20 @@ class Register extends Component {
 
   handleSignUp = async () => {
     try {
-      getServerUrl();
-      // const { firstname, lastname, email, phonenumber, password } = this.state;
-      // if (!firstname || !lastname || !email || !phonenumber || !password) {
-      //   this.props.enqueueSnackbar('Fill in all the boxes');
-      // } else {
-      //   const user = await axios.post(
-      //     'http://localhost:4020/register',
-      //     this.state,
-      //   );
-      //   setUser(user);
-      //   this.setState({ signUpSuccess: true });
-      // }
+      const { firstname, lastname, email, phonenumber, password } = this.state;
+      if (!firstname || !lastname || !email || !phonenumber || !password) {
+        this.props.enqueueSnackbar('Fill in all the boxes');
+      } else {
+        this.setState({ loading: true });
+        const data = await postData('/register', this.state);
+        setUser(data.user);
+        this.setState({ signUpSuccess: true, loading: false });
+      }
     } catch (e) {
-      console.log(e);
+      this.props.enqueueSnackbar((e && e.data && e.data.message) || e.data, {
+        variant: 'error',
+      });
+      this.setState({ loading: false });
     }
   };
 
@@ -114,7 +114,7 @@ class Register extends Component {
                         className="btn btn-success signup-button"
                         onClick={this.handleSignUp}
                       >
-                        Register
+                        {this.state.loading ? <Loading /> : 'Register'}
                       </button>
                       <p className="not-logged-in">
                         Have an account? <NavLink to="/login"> LOG IN </NavLink>
